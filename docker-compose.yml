@@ -1,0 +1,16 @@
+version: 'latest'
+services:
+  httdp:
+   image: ap1605/2048_proj:1.0
+    build:
+      context: .
+      dockerfile: dockerfile
+    deploy:
+      replicas: 5
+      restart_policy:
+    ports:
+      - "8000:80"
+    networks:
+      - webnet
+networks:
+  webnet:
